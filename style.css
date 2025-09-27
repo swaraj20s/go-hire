@@ -1,0 +1,225 @@
+*{
+    margin: 0;
+    padding: 0
+    box-sizing: border-box;
+}
+
+.body
+{
+    font-family: 'Poppins', sans-serif;
+    display: flex;
+    line-height:1.6;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background: #ffffff;
+}
+
+.navbar
+{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem 2rem;
+  background-color: #0000001A;
+  
+  backdrop-filter: blur(8px);
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+}
+
+.logo
+{
+    font-size: 2rem;
+    margin-left: 20px;
+    margin-top: 2px;
+    font-weight: bold;
+    color: #ffffff;
+    text-decoration: none;
+   ;
+}
+
+.logo span{
+    color: #007BFF;
+    top: 20px;
+    font-weight: bold;
+}
+
+.nav-links
+{
+    list-style: none;
+    display: flex;
+    justify-content: right;
+    gap: 15px;
+    align-items: center;
+    position: relative;
+    right:50px;
+    bottom: 25px;
+}
+
+.nav-links li {
+    display:inline-block;}
+
+.nav-links a {
+    text-decoration: none;
+    color: #ffffff;
+    font-weight: 500;
+    transition: color 0.3s ease;
+    padding: 0.5rem 1rem;
+}
+
+.nav-links a:hover
+{
+    color: #022f6a;
+    color: rgb(202, 214, 228);
+    transform: scale(1.1);
+}
+
+.button
+{
+    background-color: #007afc;
+    color: rgb(224, 222, 222);
+    border: none;
+    padding: 0.5rem 1rem;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.button:hover
+{
+    background: #00ccff;
+    color: white;
+    transform: scale(1.05);
+
+}
+
+.signup
+{
+    background-color: #28a745; 
+}    
+
+.signup-button:hover
+{
+    background-color: #218838; 
+}
+
+/*hero section*/
+.hero
+{
+    text-align: center;
+    padding: 1rpx;
+    height: 90vh;
+    width: auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background: linear-gradient(to right, #00000000, #00000000);
+    color: #2a3e54;
+  
+}
+
+.hero-content
+{
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: 10px;
+    height: 100%;
+    object-fit: cover;
+    transform:transparent(-50%, -50%);
+    z-index: -1;
+    opacity: 0.8;
+}
+
+.hero-text {
+    position: relative;
+    z-index: 1;
+    color: white;
+    text-align: center;
+    line-height: 40px;
+}
+
+
+
+
+.features
+
+{
+  text-align: center;
+  padding: rem 2rem;
+  height: 90vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background: linear-gradient(to right, #74ebd5, #9ca7db);
+  color: #000000;
+}
+
+.h1
+{
+    font-size: 5rem;
+    margin-bottom: 1rem;
+    color: #ffffff;
+}
+
+.p
+{
+    font-size: 1rem;
+    margin-bottom: 2px;
+    color: #ffffff;
+    max-width: 600px;
+}
+
+.hero .button
+{
+    font-size: 1.1rem;
+    padding: 0.75rem 1.7rem;
+}
+
+
+.cta-btn {
+  text-decoration: none;
+  background: #e74c3c;
+  color: white;
+  padding: 0.8rem 1.5rem;
+  border-radius: 20px;
+  transition: 0.3s;
+}
+
+.cta-btn:hover {
+  background: #c0392b;
+  transform: scale(1.05);
+}
+
+
+}
+
+/* Responsive Design */
+@media (max-width: 768px)
+{
+    .nav-links {
+        display: none;
+    }
+
+    .navbar {
+        flex-direction:row;
+        align-items: ;
+    }
+
+    .hero h1 {
+        font-size: 2.5rem;
+    }
+
+    .hero p {
+        font-size: 1rem;
+    }
+    .hero .button {
+        font-size: 1rem;
+        padding: 0.5rem 1rem;
+    }
+}
