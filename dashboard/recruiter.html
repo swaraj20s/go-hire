@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Recruiter Dashboard</title>
+  <link rel="stylesheet" href="style1.css">
+</head>
+<body>
+  <nav>
+    <a href="index.html">Home</a>
+    <a href="recruiter.html">Dashboard</a>
+    <a href="/login.html">Logout</a>
+  </nav>
+
+  <section class="dashboard">
+    <h1>Recruiter Dashboard</h1>
+    <p>Welcome! Post new jobs here:</p>
+
+    <form class="job-form">
+      <input type="text" placeholder="Job Title" required>
+      <textarea placeholder="Job Description" required></textarea>
+      <input type="text" placeholder="Location" required>
+      <button type="submit">Post Job</button>
+    </form>
+
+    <h2>Posted Jobs</h2>
+    <ul>
+    </ul>
+  </section>
+
+    <script>
+    document.querySelector('.job-form').addEventListener('submit', function(e) {
+      e.preventDefault();
+      const inputs = this.querySelectorAll('input, textarea');
+      const title = inputs[0].value.trim();
+      const desc = inputs[1].value.trim();
+      const loc = inputs[2].value.trim();
+      if (title && desc && loc) {
+        const ul = document.querySelector('ul');
+        const li = document.createElement('li');
+        li.innerHTML = `<p><strong>${title}</strong> - ${desc}
+          </p>
+          <p> <em>(${loc})</em> </p>`;
+        ul.appendChild(li);
+        this.reset();
+      }
+    });
+  </script>
+</body>
+</html>

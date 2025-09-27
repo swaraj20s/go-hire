@@ -1,6 +1,6 @@
 *{
     margin: 0;
-    padding: 0
+    padding: 0;
     box-sizing: border-box;
 }
 
@@ -13,6 +13,19 @@
     align-items: center;
     min-height: 100vh;
     background: #ffffff;
+
+}
+
+.features
+{
+    font-family: 'Poppins', sans-serif;
+    display: flex;
+    line-height:1.6;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background: #ffffff;
+
 }
 
 .navbar
@@ -22,7 +35,6 @@
   align-items: center;
   padding: 1rem 2rem;
   background-color: #0000001A;
-  
   backdrop-filter: blur(8px);
   position: fixed;
   top: 0;
@@ -57,6 +69,8 @@
     position: relative;
     right:50px;
     bottom: 25px;
+    margin-top: 10px;
+    font-size: 1.1rem;
 }
 
 .nav-links li {
@@ -196,9 +210,37 @@
   transform: scale(1.05);
 }
 
+.form-container
+{
+    background: #f4f4f4;
+    padding: 5rem;
+    border-radius: 10px;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    max-width: 400px;
+    margin: 2rem auto;
+    text-align: center;
+    color: #333;
+    font-size: 1rem;
+    line-height: 2.5;
 
 }
+.form-container h1
+{
+    margin-bottom: 2rem;
+    color: #333;
+}
+.form-container button
+{
+    background: #007BFF;
+    color: white;
+    border: none;
+    padding: 0.75rem 1.5rem;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    font-size: 1rem;
 
+.
 /* Responsive Design */
 @media (max-width: 768px)
 {
