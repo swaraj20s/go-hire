@@ -1,0 +1,80 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Recruiter Dashboard Home</title>
+	<link rel="stylesheet" href="style1.css">
+</head>
+<body>
+	<nav>
+		<a href="recruiter-home.html">Home</a>
+		<a href="../index.html">Logout</a>
+	</nav>
+	<div class="dashboard">
+		<h2>Welcome, <span id="recruiterName">Recruiter Name</span></h2>
+		<form id="profileForm" enctype="multipart/form-data">
+			<div style="text-align:center;">
+				<img id="profilePic" src="https://via.placeholder.com/120" alt="Profile Picture" style="border-radius:50%; width:120px; height:120px; object-fit:cover;">
+				<input type="file" id="profilePicInput" accept="image/*" style="display:block; margin:10px auto;">
+			</div>
+			<input type="text" id="name" placeholder="Your Name" required>
+			<input type="email" id="email" placeholder="Your Email" required>
+			<textarea id="bio" placeholder="Short Bio" rows="3"></textarea>
+			<button type="submit">Save Profile</button>
+		</form>
+
+		<hr>
+		<h3>Job Posting Management</h3>
+		<form id="jobForm">
+			<input type="text" id="jobTitle" placeholder="Job Title" required>
+			<input type="text" id="jobLocation" placeholder="Location" required>
+			<textarea id="jobDesc" placeholder="Job Description" rows="2" required></textarea>
+			<button type="submit">Add Job</button>
+		</form>
+		<ul id="jobsList"></ul>
+	</div>
+
+	<script>
+		// Profile Picture Preview
+		document.getElementById('profilePicInput').addEventListener('change', function(e) {
+			const file = e.target.files[0];
+			if (file) {
+				const reader = new FileReader();
+				reader.onload = function(evt) {
+					document.getElementById('profilePic').src = evt.target.result;
+				};
+				reader.readAsDataURL(file);
+			}
+		});
+
+		// Add Job
+		document.getElementById('jobForm').addEventListener('submit', function(e) {
+			e.preventDefault();
+			const title = document.getElementById('jobTitle').value.trim();
+			const location = document.getElementById('jobLocation').value.trim();
+			const desc = document.getElementById('jobDesc').value.trim();
+			if (title && location && desc) {
+				addJob(title, location, desc);
+				document.getElementById('jobTitle').value = '';
+				document.getElementById('jobLocation').value = '';
+				document.getElementById('jobDesc').value = '';
+			}
+		});
+
+		function addJob(title, location, desc) {
+			const li = document.createElement('li');
+			li.innerHTML = `<strong>${title}</strong> <span style='color:#888;'>(${location})</span><br><span>${desc}</span> <button onclick='this.parentElement.remove()'>Remove</button>`;
+			document.getElementById('jobsList').appendChild(li);
+		}
+
+		// Save Profile (local only for demo)
+		document.getElementById('profileForm').addEventListener('submit', function(e) {
+			e.preventDefault();
+			document.getElementById('recruiterName').textContent = document.getElementById('name').value;
+			alert('Profile saved! (Demo only, not persistent)');
+		});
+	</script>
+</body>
+</html>

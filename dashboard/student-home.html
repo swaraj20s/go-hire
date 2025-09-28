@@ -1,0 +1,85 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Student Dashboard Home</title>
+	<link rel="stylesheet" href="style1.css">
+</head>
+<body>
+	<nav>
+		<a href="./student-home.html">Home</a>
+        <a href="/dashboard/student.html">Dashboard</a>
+		<a href="../login.html">Logout</a>
+	</nav>
+	<div class="dashboard">
+		<h2>Welcome, <span id="studentName">Student Name</span></h2>
+		<form id="profileForm" enctype="multipart/form-data">
+			<div style="text-align:center;">
+				<img id="profilePic" src="https://via.placeholder.com/120" alt="Profile Picture" style="border-radius:50%; width:120px; height:120px; object-fit:cover;">
+				<input type="file" id="profilePicInput" accept="image/*" style="display:block; margin:10px auto;">
+			</div>
+			<input type="text" id="name" placeholder="Your Name" required>
+			<input type="email" id="email" placeholder="Your Email" required>
+			<textarea id="bio" placeholder="Short Bio" rows="3"></textarea>
+			<button type="submit">Save Profile</button>
+		</form>
+
+		<hr>
+		<h3>Skill Showcase</h3>
+		<form id="skillForm">
+			<input type="text" id="skillName" placeholder="Skill Name" required>
+			<input type="range" id="skillLevel" min="1" max="100" value="50">
+			<span id="skillLevelValue">50</span>%
+			<button type="submit">Add Skill</button>
+		</form>
+		<ul id="skillsList"></ul>
+	</div>
+
+	<script>
+		// Profile Picture Preview
+		document.getElementById('profilePicInput').addEventListener('change', function(e) {
+			const file = e.target.files[0];
+			if (file) {
+				const reader = new FileReader();
+				reader.onload = function(evt) {
+					document.getElementById('profilePic').src = evt.target.result;
+				};
+				reader.readAsDataURL(file);
+			}
+		});
+
+		// Skill Level Value Display
+		document.getElementById('skillLevel').addEventListener('input', function(e) {
+			document.getElementById('skillLevelValue').textContent = e.target.value;
+		});
+
+		// Add Skill
+		document.getElementById('skillForm').addEventListener('submit', function(e) {
+			e.preventDefault();
+			const name = document.getElementById('skillName').value.trim();
+			const level = document.getElementById('skillLevel').value;
+			if (name) {
+				addSkill(name, level);
+				document.getElementById('skillName').value = '';
+				document.getElementById('skillLevel').value = 50;
+				document.getElementById('skillLevelValue').textContent = 50;
+			}
+		});
+
+		function addSkill(name, level) {
+			const li = document.createElement('li');
+			li.innerHTML = `<strong>${name}</strong> <div style='width:60%;display:inline-block;vertical-align:middle;'><div style='background:#eee;border-radius:5px;overflow:hidden;'><div style='width:${level}%;background:#4caf50;height:10px;'></div></div></div> <span style='margin-left:10px;'>${level}%</span> <button onclick='this.parentElement.remove()'>Remove</button>`;
+			document.getElementById('skillsList').appendChild(li);
+		}
+
+		// Save Profile (local only for demo)
+		document.getElementById('profileForm').addEventListener('submit', function(e) {
+			e.preventDefault();
+			document.getElementById('studentName').textContent = document.getElementById('name').value;
+			alert('Profile saved! (Demo only, not persistent)');
+		});
+	</script>
+</body>
+</html>
