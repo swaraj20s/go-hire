@@ -1,130 +1,375 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <title>My Blog</title>
-  <link rel="stylesheet" href="style.css">
-   <style>
+  <head>
+    <meta charset="UTF-8" />
+    <title>My Blog</title>
+    <link rel="stylesheet" href="style.css" />
+    <style>
+      .body {
+        font-family: Arial, sans-serif;
+        margin: 0;
+        padding: 0;
+        background-color: #3e89c6a1;
+      }
 
-   .body
-   {
-    font-family: Arial, sans-serif;
-    margin: 0;
-    padding: 0;
-    background-color: #f9f9f9;
-    }
-    
-  .navbar1 {
-    background-color: #33333302;
-    overflow: hidden;
-    display: flex;
-    gap: 10px;
-    justify-content: right;
-    padding: 10px;
-  
-  }
+      .navbar1 {
+        background-color: #33333302;
+        overflow: hidden;
+        display: flex;
+        gap: 10px;
+        justify-content: right;
+        padding: 10px;
+      }
 
-  .navbar1 a {
-    color: rgba(64, 56, 56, 0.803);
-    text-align: center;
-    padding: 14px 20px;
-    text-decoration: none;
-    font-size: 17px;
-    transition: background-color 0.3s;
-  }
+      .navbar1 a {
+        color: rgba(64, 56, 56, 0.803);
+        text-align: center;
+        padding: 14px 20px;
+        text-decoration: none;
+        font-size: 17px;
+        transition: background-color 0.3s;
+      }
 
-  .navbar1 a:hover {
-    background-color: #dddddd00;
-   
-  }
+      .navbar1 a:hover {
+        background-color: #dddddd00;
+      }
 
-  main {
-    padding: 20px;
-    text-align: center;
-  }
+      main {
+        padding: 20px;
+        text-align: center;
+      }
 
-  header h1 {
-    font-size: 2.5rem;
-    margin-bottom: 1rem;
-    color: rgb(72, 72, 255);
-    font-weight: 700;
-    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.1);
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    letter-spacing: 1px;
-    text-align: center
+      header {
+        background-color: #f0f0f0;
+        padding: 40px 20px;
+        margin-bottom: 20px;
+        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        border-radius: 8px;
+        max-width: 500px;
+        margin: 2rem auto;
+      }
 
-  }
+      header h1 {
+        font-size: 2.5rem;
+        margin-bottom: 1rem;
+        color: rgb(72, 72, 255);
+        font-weight: 700;
+        text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.1);
+        font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+        letter-spacing: 1px;
+        text-align: center;
+      }
 
-  header p {
-    font-size: 1.2rem;
-    max-width: 600px;
-    margin: 0 auto;
-    color: #555;
-    font-weight: 500;
-    line-height: 1.6;
-  }
+      header p {
+        font-size: 1.2rem;
+        text-align: center;
+        margin-bottom: 2rem;
+        max-width: 600px;
+        margin: 0 auto;
+        color: #555;
+        font-weight: 500;
+        line-height: 1.6;
+      }
 
-  .button
-{
-    background-color: #007afc;
-    color: rgb(224, 222, 222);
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-    transition: background-color 0.3s ease;
-    padding: 10px 20px;
-    text-decoration: none;
-    font-size: 1rem;
-}
+      .button {
+        background-color: #007afc;
+        color: rgb(224, 222, 222);
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;
+        transition: background-color 0.3s ease;
+        padding: 10px 20px;
+        text-decoration: none;
+        font-size: 1rem;
+      }
 
-.button:hover
-{
-    background: #1e788f;
-    color: rgb(18, 68, 107);
-    transform: scale(1.05);
-    border-color: black;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+      .button:hover {
+        background: #1e788f;
+        color: rgb(18, 68, 107);
+        transform: scale(1.05);
+        border-color: black;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+      }
 
+      .date {
+        background: #2a89f0a7;
+        padding: 0.5rem;
+        border-radius: 10px;
+        box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+        max-width: 100px;
+        margin: 2rem auto;
+        font-size: 1.2rem;
+        color: #333;
+        line-height: 1.5;
+      }
 
-}
+      .post {
+        background: white;
+        padding: 2rem;
+        border-radius: 10px;
+        box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+        max-width: 800px;
+        margin: 2rem auto;
+        text-align: center;
+      }
 
-.about-section
-{
-    background: #f4f4f4;
-    padding: 5rem;
-    border-radius: 10px;
-    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
-    max-width: 800px;
-    margin: 2rem auto;
-    font-size: 1.2rem;
-    color: #333;
-    line-height: 1.5;
-}
+      h2 {
+        color: #333;
+        font-size: 2rem;
+        margin-bottom: 1rem;
+        font-weight: 700;
+        text-align: center;
+        font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+        letter-spacing: 1px;
+      }
 
-   </style>
-</head>
-<body>
-  <nav class="navbar1">
-    <a href="index.html">Home</a>
-    <a href="about.html">About</a>
-    <a href="login.html">Login</a>
-    <a href="signup.html">Signup</a>
-  </nav>
+      p {
+        color: #555;
+        font-size: 1.1rem;
+        line-height: 1.6;
+        margin-bottom: 1.5rem;
+        max-width: 800px;
+        margin: 0 auto 1.5rem auto;
+        text-align: justify;
+        font-weight: 500;
+      }
 
-  <header class="header">
-    <h1>Welcome to My Blog</h1>
-    <p>Sharing thoughts, stories & ideas...</p>
-  </header>
+      /* --- 2. MAIN NAVIGATION LINKS --- */
 
-  <main>
-    <article>
-      <h2>Blog Post Title</h2>
-      <p>This is a sample blog post. You can add your content here...</p>
-    </article>
-    <article>
-      <h2>Another Post</h2>
-      <p>More content goes here...</p>
-    </article>
-  </main>
-</body>
+      .site-footer {
+        background-color: #2c3e50; /* Dark, professional background */
+        color: #ecf0f1; /* Light text for high contrast */
+        font-family: "Poppins", sans-serif; /* Consistent font */
+        padding: 0; /* Will be managed by internal sections */
+      }
+      /* Base link styling */
+      .site-footer a {
+        color: #bdc3c7; /* Subtle light gray for non-primary links */
+        text-decoration: none;
+        transition: color 0.3s;
+      }
+
+      .footer-links-container {
+        display: flex;
+        justify-content: space-around;
+        padding: 50px 40px;
+        flex-wrap: wrap; /* Allows columns to wrap on smaller screens */
+        border-bottom: 1px solid rgba(255, 34, 34, 0.1); /* Subtle divider */
+      }
+
+      .footer-column {
+        width: 25%; /* Give each column equal space */
+        min-width: 180px; /* Minimum width before wrapping */
+        margin-bottom: 30px; /* Space between columns when they wrap */
+      }
+
+      .footer-logo {
+        max-width: 150px; /* Size your logo appropriately */
+        margin-bottom: 10px;
+        filter: invert(
+          100%
+        ); /* Optional: Make a dark logo white on dark background */
+      }
+
+      .tagline {
+        font-size: 0.9em;
+        color: #bdc3c7;
+        line-height: 1.5;
+      }
+
+      .footer-column h3 {
+        color: white; /* Column titles stand out */
+        font-size: 1.1em;
+        margin-top: 0;
+        margin-bottom: 15px;
+        font-weight: 600;
+        border-bottom: 2px solid #3498db; /* Subtle blue underline */
+        display: inline-block;
+        padding-bottom: 5px;
+      }
+
+      .footer-column ul {
+        list-style: none;
+        padding: 0;
+        margin: 0;
+      }
+
+      .footer-column ul li {
+        margin-bottom: 8px;
+      }
+
+      /* Highlight CTAs within the link columns */
+      .cta-link {
+        color: #2ecc71 !important; /* Make these links stand out */
+        font-weight: 600;
+      }
+
+      .cta-link:hover {
+        color: #27ae60 !important;
+      }
+      /* --- 3. LEGAL & SOCIAL BAR --- */
+      .footer-bottom-bar {
+        text-align: center;
+        padding: 20px 40px;
+        font-size: 0.85em;
+      }
+
+      .legal-links a {
+        margin: 0 10px;
+        color: #95a5a6;
+      }
+
+      .separator {
+        color: #7f8c8d;
+      }
+
+      .copyright {
+        margin-top: 10px;
+        color: #95a5a6;
+        text-align: center;
+      }
+
+      /* Social Icons */
+      .social-links {
+        margin: 20px 0;
+      }
+
+      .social-links a {
+        color: #ecf0f1;
+        font-size: 1.5em;
+        margin: 0 10px;
+        display: inline-block;
+      }
+
+      .social-links a:hover {
+        color: #3498db;
+        transform: scale(1.1);
+      }
+    </style>
+  </head>
+  <body>
+    <nav class="navbar1">
+      <a href="index.html">Home</a>
+      <a href="about.html">About</a>
+      <a href="blogs.html">blogs</a>
+      <a href="login.html" class="button">Login</a>
+      <a href="signup.html" class="button">Signup</a>
+    </nav>
+
+    <header class="header">
+      <h1>Welcome to our Blog</h1>
+      <p>Sharing thoughts, stories & ideas...</p>
+    </header>
+
+    <main>
+      <article class="post">
+        <span class="date">September 27, 2025</span>
+        <h2>Why Learning Web Development is Important in 2025</h2>
+        <p>
+          The world is becoming increasingly digital, and web development skills
+          are more valuable than ever. Whether you want to build your own
+          website, start a tech career, or simply understand how the internet
+          works, learning web development opens up countless opportunities. In
+          2025, businesses of all sizes rely on their online presence to reach
+          customers, share information, and provide services.
+        </p>
+        <p>
+          With the rise of new technologies like AI, progressive web apps, and
+          cloud computing, web development continues to evolve. By learning
+          HTML, CSS, and JavaScript, you gain the foundation to create
+          interactive and responsive websites. Plus, web development encourages
+          problem-solving and creativity, making it a rewarding skill for anyone
+          to learn.
+        </p>
+      </article>
+      <article class="post">
+        <span class="date">September 20, 2025</span>
+        <h2>Getting Started with CSS: Tips for Beginners</h2>
+        <p>
+          CSS (Cascading Style Sheets) is what makes websites look beautiful and
+          unique. If you're just starting out, focus on understanding selectors,
+          properties, and values. Experiment with colors, fonts, and layouts to
+          see how small changes can make a big difference.
+        </p>
+        <p>
+          Use online resources like MDN Web Docs and freeCodeCamp to practice
+          your skills. Try building simple projects, such as a personal
+          portfolio or a landing page. Remember, the best way to learn CSS is by
+          doing—so don't be afraid to experiment and break things!
+        </p>
+      </article>
+    </main>
+    <footer class="site-footer">
+      <div class="footer-links-container">
+        <div class="footer-column brand-info">
+          <img
+            src="./asset/handshake.jpg"
+            alt="[Your Company Name] Logo"
+            class="footer-logo"
+          />
+          <p class="tagline">The fastest path from 'Apply' to 'Hired'.</p>
+        </div>
+
+        <div class="footer-column">
+          <h3>Find Your Future</h3>
+          <ul>
+            <li><a href="/jobs/all">Browse All Jobs</a></li>
+            <li><a href="/jobs/categories">Jobs by Category</a></li>
+            <li><a href="/jobs/remote">Remote Jobs</a></li>
+            <li><a href="/career-advice">Career Advice & Blog</a></li>
+            <li>
+              <a href="/upload-resume" class="cta-link">**Post Your Resume**</a>
+            </li>
+          </ul>
+        </div>
+
+        <div class="footer-column">
+          <h3>For Employers</h3>
+          <ul>
+            <li><a href="/post-a-job">Post a Job</a></li>
+            <li><a href="/pricing">Pricing Plans</a></li>
+            <li><a href="/recruiter-login">Recruiter Login</a></li>
+            <li><a href="/employer-faqs">Employer FAQs</a></li>
+            <li>
+              <a href="/contact/sales" class="cta-link">**Contact Sales**</a>
+            </li>
+          </ul>
+        </div>
+
+        <div class="footer-column">
+          <h3>Our Company</h3>
+          <ul>
+            <li><a href="/about">About Us</a></li>
+            <li><a href="/contact">Contact Us / Support</a></li>
+            <li><a href="/careers">Join Our Team</a></li>
+            <li><a href="/sitemap">Sitemap</a></li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="footer-bottom-bar">
+        <div class="legal-links">
+          <a href="/privacy-policy">Privacy Policy</a>
+          <span class="separator">|</span>
+          <a href="/terms-of-service">Terms of Service</a>
+          <span class="separator">|</span>
+          <a href="/cookie-settings">Cookie Settings</a>
+        </div>
+
+        <div class="social-links">
+          <a href="#" aria-label="Connect on LinkedIn"
+            ><i class="fab fa-linkedin"></i
+          ></a>
+          <a href="#" aria-label="Follow us on X (Twitter)"
+            ><i class="fab fa-twitter"></i
+          ></a>
+          <a href="#" aria-label="Follow us on Instagram"
+            ><i class="fab fa-instagram"></i
+          ></a>
+        </div>
+
+        <p class="copyright">&copy; 2025 GoHire. All rights reserved.</p>
+      </div>
+    </footer>
+  </body>
 </html>
